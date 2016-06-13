@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/save">
+        <label for="title-id" class=".in-block">Title</label><br/>
+
+        <input type="text" id="title-id"/><br/>
+
+        <label for="todo-description">TODO Description</label><br>
+        <textarea id="todo-description" rows="4" cols="50" name="description"></textarea><br>
+        <input type="submit" value="Save"/>
+    </form>
+    <hr>
+    <h2>Take your choice</h2>
+    <a href="/edit">Edit</a>
+    <a href="/add">Add</a>
+    <a href="/list">List</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>EDIT ToDO's</h1>
+<form action="/edit/selected" method="post">
+<label for="title-id" class=".in-block">Select From todo</label><br/>
+<select id="title-id" name="title">
+    <option></option>
+    {{ range $key, $value := .Todos }}
+    <option>{{ $key }} {{$value.Title }}</option>
+    {{ end }}
+</select>
+<input type="submit" value="Select"/>
+<br/>
+</form>
+<form method="post" action="/save">
+
+    <label for="todo-description">TODO Description</label><br>
+    <textarea id="todo-description" rows="4" cols="50" name="description">{{print .Text}}</textarea><br>
+    <input type="submit" value="Save"/>
+</form>
+<hr>
+<h2>Take your choice</h2>
+<a href="/edit">Edit</a>
+<a href="/add">Add</a>
+<a href="/list">List</a>
+</body>
+</html>
